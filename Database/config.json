@@ -1,0 +1,12 @@
+{
+    "development": {
+        "username": "root",
+        "password": "1",
+        "database": "manageHotel",
+        "host": "127.0.0.1",
+        "dialect": "mysql", 
+        "define": {
+            "timestamps": false
+        }
+    }
+}
