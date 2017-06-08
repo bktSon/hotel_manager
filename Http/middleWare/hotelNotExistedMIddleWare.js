@@ -4,11 +4,12 @@ const models = require('../../models/index');
 
 module.exports = function(req, res, next) {
   
-    models.Hotels.findOne({where: {id: req.params.hotelId}}).then((hotel) => {
-        if( ! hotel) {
-            return res.json('Hotel not existed');
+    req.app.hotelRepository.findById(req.params.hotelId).then((hotel) => {
+        if(hotel) {
+            req.hotel = hotel;
+            return next();
         }
+        return res.send('Hotel not existed');
     });
     
-    next();
 }

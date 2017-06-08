@@ -10,16 +10,16 @@ class HotelReposiory {
     }
     
     findAll() {
-        return this.database.findAll().then((hotels) => {
-            return this.factory.factoryList(hotels);
-        });
+        // return this.database.findAll().then((hotels) => {
+        //     return this.factory.factoryList(hotels);
+        // });
         
-        // let self = this;
-        // return new Promise(function(resolve, reject) {
-        //     return self.database.findAll().then((hotels) => {
-        //         resolve(self.factory.factoryList(hotels));
-        //     })
-        // })
+        let self = this;
+        return new Promise(function(resolve, reject) {
+            return self.database.findAll().then((hotels) => {
+                resolve(self.factory.factoryList(hotels));
+            })
+        })
     } 
     
     findById(id) {
@@ -27,9 +27,14 @@ class HotelReposiory {
         //     return this.factory.factory(hotel);
         // });
         // let hotel = this.database.findOne({where: {id: id}});
+        
         let self = this;
         return new Promise(function(resolve, reject) {
             return self.database.findOne({where: {id: id}}).then((hotel) => {
+                if( ! hotel ) {
+                    return resolve('hotel not found')
+                };
+                
                 resolve(self.factory.factory(hotel));
             })
         })

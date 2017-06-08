@@ -7,7 +7,7 @@ const models          = require('../../models');
 
 module.exports = function(req, res, next) {
     let hotelRepository = new HotelRepository(models.Hotels, new HotelFactory());
-    req.app.hotelConnection = hotelRepository;
+    req.app.hotelRepository = hotelRepository;
     next();
 }
 

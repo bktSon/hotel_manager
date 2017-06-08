@@ -10,12 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.0",
-    "body-parser": "^1.17.1",
+    "body-parser": "^1.17.2",
     "express": "^4.15.2",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.28",
+    "morgan": "^1.8.2",
     "mysql": "^2.13.0",
+    "rotating-file-stream": "^1.2.2",
     "sequelize": "^3.30.4",
-    "sequelize-cli": "^2.7.0"
+    "sequelize-cli": "^2.7.0",
+    "winston": "^2.3.1"
   }
 }

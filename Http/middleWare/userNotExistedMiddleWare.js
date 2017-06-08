@@ -8,6 +8,7 @@ module.exports = function(req, res, next) {
                 req.user = user;
                 return next();
             };
+            
             return res.send('Error user Id not found');
         })
 }
