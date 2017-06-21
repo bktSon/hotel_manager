@@ -17,6 +17,7 @@ const userNotExistedMiddleWare  = require('../middleWare/userNotExistedMiddleWar
 
 // Hotel 
 router.get('/hotels', hotelController.findAll);
+router.get('/hotels/:id', hotelController.findById);
 
 // Room
 router.get('/rooms', roomController.findAll);
