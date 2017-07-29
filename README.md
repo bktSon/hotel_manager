@@ -8,4 +8,4 @@ problem help me make clean and beautiful code as syntax, promise, async-await, a
 
 ---
 
-*Have a good time: heart:*
+*Have a good time: :heart:*
